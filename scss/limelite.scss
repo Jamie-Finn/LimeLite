@@ -1,0 +1,20 @@
+/* ==========================================================================
+ LimeLite
+ By Jamie Finn (@jays_blog)	
+ Licensed under the MIT license, 2015
+========================================================================== */
+
+/* Configuration (variables, widths etc...) */
+@import 'config';
+
+/* HTML5 Boilerplate normalize styles. Some are removed from the original file and are contained within _boilerplate.scss. */
+@import 'normalize';
+
+/* Main boilerplate and typography for site (html, h2, h3, select, clearfix etc...) */
+@import 'boilerplate';
+
+/* 12 column grid system influenced by Lemonade V2 - Joe Richardson. Media queries also stored here. */
+@import 'grid';
+
+/* Demo styles for index page */
+@import 'demo';

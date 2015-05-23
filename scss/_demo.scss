@@ -1,0 +1,21 @@
+/* Demo styles for index page. Feel free to remove these. */
+header {
+	text-align: center;
+	background-color: $gray-color;
+	padding: 5% 10%;
+	box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.8);
+}
+
+.box {
+	background: $mine-shaft-color;
+	@include font-size(1.4);
+	text-align: center;
+	padding: 8em 0;
+	color: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.8);
+}
+
+.text {
+	text-align: center;
+}

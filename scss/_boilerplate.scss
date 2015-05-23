@@ -1,0 +1,245 @@
+/* ==========================================================================
+ Base styles taken from HTML5 Boilerplate with some of my own tweaks
+ and styles. 
+ Typography is my own.
+========================================================================== */
+
+
+/* ==========================================================================
+ Mixins.
+ Own file not really needed but it is to your own preference.
+========================================================================== */
+
+/* 
+ * Keeps your font size relative to the root set
+ * in the html element below. 
+ */
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+/* Border box */
+@mixin box-sizing($type) {
+  -webkit-box-sizing: $type;
+     -moz-box-sizing: $type;
+          box-sizing: $type;
+}
+
+
+/* ==========================================================================
+ Main boilerplate section with container classes and Typography.
+========================================================================== */
+
+/* margin and padding reset and border-box include from mixin above. */
+* {
+    margin: 0;
+    padding: 0;
+    @include box-sizing(border-box);
+}
+
+html {
+    color: #222;
+    font-family: $font-family;
+    font-size: 62.5%; /* Sets the base font to then use with the mixin above. */
+    line-height: 1.4;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; 
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/* 100% width container with clearfix. Not always required if you like to have a max-width set like below. */ 
+.container {
+    margin: 0 auto;
+    width: $container-width;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+/* Content wrapper with max-width and clearfix. Feel free to rename to your preference. */
+.content-container {
+    margin: 0 auto;
+    max-width: $container-content-width;
+    padding: 4em 0;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+/* Typography */
+h1 {
+  @include font-size(7);
+  font-weight: 700;
+  margin-bottom: $typography-margin; 
+}
+
+h2 {
+  @include font-size(3);
+  font-weight: 400;
+  margin-bottom: $typography-margin; 
+}
+
+h3 {
+  @include font-size(3);
+  font-weight: 400;
+  margin-bottom: $typography-margin; 
+}
+
+p {
+  @include font-size(1.8);
+  font-weight: 300;
+  margin-bottom: $typography-margin; 
+}
+
+a {
+  @include font-size(1.8);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.bold {
+  font-weight: 600; /* Class will make the font bold if you include it. */
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+    resize: vertical;
+}
+
+/*
+ * Browser Upgrade Prompt
+*/
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+ Helper classes provided by HTML5 Boilerplate
+========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ */
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}

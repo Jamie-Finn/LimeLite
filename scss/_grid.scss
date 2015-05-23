@@ -1,0 +1,160 @@
+/* ==========================================================================
+ Grid system inspired by Lemonade.
+ I tend to include all my media query styles in
+ this file along with the grids to keep my code 
+ clean.
+ Print queries from the HTML5 boilerplate have 
+ also been included.
+========================================================================== */
+
+/* Selects all attributes that begin with 'col-'. Very handy tool in sass. */
+[class*='col-'] {
+    float: left;
+    padding: $col-padding;
+}
+
+/* Creates the grid widths (1-12) */
+@for $i from $start through $end {
+    .col-#{$i} {
+        width: $full / $i;
+    }
+}
+
+/* Commonly used widths such as 40, 60 or 75 etc... are created here. */
+@each $i in $common {
+    .col-#{$i} {
+        width: percentage($i / 100);
+    }
+}
+
+
+/* Media queries for responsive design. Feel free to edit these to suit your requirements. */
+
+/* Mobile */
+@media (max-width: $small) {
+    @for $i from $start through $end {
+        .col-#{$i} {
+            width: $full
+        }
+    }
+    .slicknav_menu {
+        display: block;
+    }
+}
+
+/* Portrait Tablet */
+@media (min-width: $small) and (max-width: $medium) {
+    .col-4,
+    .col-6,
+    .col-8,
+    .col-10,
+    .col-12 {
+        width: $half;
+    }
+
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-5,
+    .col-7,
+    .col-9,
+    .col-11 {
+        width: $full;
+    }
+}
+
+/* Landscape Tablet */
+@media (min-width: $medium) and (max-width: $large) {
+    .col-2,
+    .col-7 {
+        width: $full;
+    }
+
+    .col-4,
+    .col-8,
+    .col-10,
+    .col-12 {
+        width: $half;
+    }
+}
+
+/* Media queries for print taken from the HTML5 Boilerplate */
+@media print,
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/*
+ * Print styles.
+ * Inlined to avoid the additional HTTP request:
+ * http://www.phpied.com/delay-loading-your-print-css/
+ */
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
