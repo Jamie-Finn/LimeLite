@@ -37,8 +37,8 @@
             width: $full
         }
     }
-    .slicknav_menu {
-        display: block;
+    header h1 {
+        @include font-size(6);
     }
 }
 

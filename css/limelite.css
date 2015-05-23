@@ -680,8 +680,9 @@ textarea {
   .col-12 {
     width: 100%; }
 
-  .slicknav_menu {
-    display: block; } }
+  header h1 {
+    font-size: 60px;
+    font-size: 6rem; } }
 /* Portrait Tablet */
 @media (min-width: 30em) and (max-width: 50em) {
   .col-4,
