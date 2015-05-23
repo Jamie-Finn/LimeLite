@@ -13,4 +13,4 @@ With the Lemonade Grid system all I did was change '.bit-' to '.col-' as that is
 
 ### License
 
-LimeLite is an open-sourced project licensed under the [MIT License](http://opensource.org/licenses/MIT);
+LimeLite is an open-sourced project licensed under the [MIT License](http://opensource.org/licenses/MIT).
